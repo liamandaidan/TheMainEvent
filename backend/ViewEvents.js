@@ -36,36 +36,37 @@ var keywords = {
 function emailBot() {}
 
 function getTags() {
-  // allTags = [];
+  allTags = [];
   // //may be problematic
-  // const allTypes = event_type;
-  // allTypes.sort();
-  // for (let i = 0; i < db.length - 1; i++) {
-  //   if (allTypes[i + 1] === allTypes[i]) {
-  //   } else {
-  //     allTags.push(allTypes[i]);
-  //   }
-  // }
-  // let output = "";
-  // for (let i = 0; i < allTags.length; i++) {
-  //   output += allTags[i] + " <br>";
-  // }
-  for (let i = 0; i < db.length; i++) {
-    usedKeyWords = [];
-    // usedKeyWords.push(
-    //   findKeys(
-    //     notes[i] + " " + title[i] + " " + event_group[i] + " " + event_type[i],
-    //     keywords
-    //   )
-    // );
-    //console.log(
-    findKeys(
-      notes[i] + " " + title[i] + " " + event_group[i] + " " + event_type[i],
-      keywords
-    );
+  const allTypes = event_type;
+  allTypes.sort();
+  for (let i = 0; i < db.length - 1; i++) {
+    if (allTypes[i + 1] === allTypes[i]) {
+    } else {
+      allTags.push(allTypes[i]);
+     
+    }
   }
+   let output = "";
+   for (let i = 0; i < allTags.length; i++) {
+   output += allTags[i] + " <br>";
+  }
+  // for (let i = 0; i < db.length; i++) {
+  //   usedKeyWords = [];
+  //   // usedKeyWords.push(
+  //   //   findKeys(
+  //   //     notes[i] + " " + title[i] + " " + event_group[i] + " " + event_type[i],
+  //   //     keywords
+  //   //   )
+  //   // );
+  //   //console.log(
+  //   findKeys(
+  //     notes[i] + " " + title[i] + " " + event_group[i] + " " + event_type[i],
+  //     keywords
+  //   );
+  // }
 
-  // document.getElementById("gTag").innerHTML = output;
+  document.getElementById("gTag").innerHTML = output;
 }
 
 function findKeys(input, keywords) {
@@ -102,7 +103,6 @@ function getKey(text) {
   if (found == null) {
     return text;
   } else {
-    
     let t = "" + found;
     foundKeywords.push(t);
     text.replaceAll(found, "");
@@ -174,7 +174,7 @@ function retrieve(field1, field2, field3, field4) {
           '">Click Me!</a></td></tr>';
       }
       output += "</table>";
-      display(output);
+     // display(output);
     } else if (xhr.status == 404) {
       console.log("Could not find database");
     }
