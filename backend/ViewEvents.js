@@ -11,26 +11,102 @@ var all_dates;
 var next_date;
 var lat;
 var long;
+var usedKeyWords; //this will contain the keywords used in events.
 var allTags; //sorted tags
 
-function emailBot(){
+var keywords = {
+  "drop-in": "Drop-in",
+  nature: "Outdoors",
+  skate: "Physical activity",
+  yoga: "Physical activity",
+  family: "Family",
+  children: "Children",
+  gym: "Physical activity",
+  filipino: "Filipino",
+  asian: "Asian",
+  recreation: "Recreation",
+  leisure: "Leisure",
+  sport: "Physical activity",
+  athletic: "Physical activity",
+  community: "Community",
+  preschool: "Childern",
+  "board meeting": "City Business",
+};
 
-}
+function emailBot() {}
 
 function getTags() {
-  allTags = [];
-  //may be problematic
-  const allTypes = event_type.sort();
-
-  for (let i = 0; i < db.length - 1; i++) {
-    if (allTypes[i + 1] === allTypes[i]) {
-    } else {
-      allTags.push(allTypes[i]);
-    }
+  // allTags = [];
+  // //may be problematic
+  // const allTypes = event_type;
+  // allTypes.sort();
+  // for (let i = 0; i < db.length - 1; i++) {
+  //   if (allTypes[i + 1] === allTypes[i]) {
+  //   } else {
+  //     allTags.push(allTypes[i]);
+  //   }
+  // }
+  // let output = "";
+  // for (let i = 0; i < allTags.length; i++) {
+  //   output += allTags[i] + " <br>";
+  // }
+  for (let i = 0; i < db.length; i++) {
+    usedKeyWords = [];
+    // usedKeyWords.push(
+    //   findKeys(
+    //     notes[i] + " " + title[i] + " " + event_group[i] + " " + event_type[i],
+    //     keywords
+    //   )
+    // );
+    //console.log(
+    findKeys(
+      notes[i] + " " + title[i] + " " + event_group[i] + " " + event_type[i],
+      keywords
+    );
   }
 
-  for (let i = 0; i < allTags.length; i++) {
-    console.log(allTags[i]);
+  // document.getElementById("gTag").innerHTML = output;
+}
+
+function findKeys(input, keywords) {
+  //step 1 return if keys are found
+  var found = Object.keys(keywords).find(
+    (key) => input.toLowerCase().search(key) > -1
+  );
+  let flag = false;
+  if (found != null) {
+    console.log("FOUND@ " + found);
+    flag = true;
+  } else {
+    console.log("not found");
+  }
+  //step 2 find what keys are found
+  if (flag) {
+    getKey(input);
+    for (let i = 0; i < foundKeywords.length; i++) {
+      console.log(foundKeywords[i]);
+    }
+  }
+  //step 3 return list of keys
+
+  //  console.log(found);
+
+  return keywords[found] || "null";
+}
+var foundKeywords = [];
+
+function getKey(text) {
+  var found = Object.keys(keywords).find(
+    (key) => text.toLowerCase().search(key) > -1
+  );
+  if (found == null) {
+    return text;
+  } else {
+    
+    let t = "" + found;
+    foundKeywords.push(t);
+    text.replaceAll(found, "");
+    getKey(text);
   }
 }
 
@@ -67,6 +143,7 @@ function retrieve(field1, field2, field3, field4) {
         notes.push(db[i].notes);
         title.push(db[i].title);
         event_type.push(db[i].event_type);
+        more_info_url.push(db[i].more_info_url);
         event_group.push(db[i].event_group);
         all_dates.push(db[i].all_dates);
         next_date.push(db[i].next_date_times);
@@ -112,19 +189,19 @@ function display(output) {
 }
 
 function initialize() {
-  var mapCanvas = document.getElementById('map');
+  var mapCanvas = document.getElementById("map");
   //51.0489141,-114.0680675
-  var myLatLng = {lat: 51.0489141, lng: -114.0680675};
+  var myLatLng = { lat: 51.0489141, lng: -114.0680675 };
   var mapOptions = {
     center: new google.maps.LatLng(myLatLng),
     zoom: 15,
-    mapTypeId: google.maps.MapTypeId.SATELLITE
-  }
-  var map = new google.maps.Map(mapCanvas, mapOptions)
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({
-  position: myLatLng,
-  map: map,
-  title: 'Hello World!'
-});
+    position: myLatLng,
+    map: map,
+    title: "Hello World!",
+  });
 }
 function search() {}
