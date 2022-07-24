@@ -55,7 +55,7 @@ function search(query) {
         title[i] +
         "</td>" +
         "<td>" +
-        "Other" +
+        next_date[i] +
         "</td>" +
         "<td>" +
         notes[i] +
