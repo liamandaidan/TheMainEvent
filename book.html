@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <title>View Events</title>
+    <title>Book</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap1.min.css" />
     <link
       rel="stylesheet"
@@ -18,19 +18,53 @@
     />
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/css/Black-Navbar.css" />
-
+    <link
+      rel="stylesheet"
+      href="assets/css/Dark-NavBar-Navigation-with-Button.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/Dark-NavBar-Navigation-with-Search.css"
+    />
+    <link rel="stylesheet" href="assets/css/Dark-NavBar.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css"
     />
-
+    <link rel="stylesheet" href="assets/css/icon-star-full.css" />
     <link rel="stylesheet" href="assets/css/Section-Title.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWfu-lO-y3oA2wKN-3-677DEmCStsUipU"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById("map");
+        //51.0489141,-114.0680675
+        var myLatLng = { lat: 51.0489141, lng: -114.0680675 };
+        var mapOptions = {
+          center: new google.maps.LatLng(myLatLng),
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: "Hello World!",
+        });
+      }
+      google.maps.event.addDomListener(window, "load", initialize);
+    </script>
   </head>
 
-  <body class="bg-dark" onload="retrieve();">
+  <body class="bg-dark">
     <div class="bg-dark title-div">
-      <h1 class="fs-4 text-light bg-dark">View Events</h1>
+      <h1 class="fs-4 text-light bg-dark">Home</h1>
     </div>
     <nav
       class="navbar navbar-light navbar-expand-md bg-warning navbar-fixed-top navigation-clean-button"
@@ -139,29 +173,70 @@
       <div class="row mb-5">
         <div class="col-md-8 col-xl-6 text-center mx-auto">
           <h2>
-            <span style="color: rgb(255, 255, 255)">View Events</span>
+            <span style="color: rgb(255, 255, 255)">Book the Main Event</span>
           </h2>
           <p class="w-lg-50">
             <span style="color: rgb(255, 255, 255)"
-              >Select from our menu a keyword to find events suited to
-              you!</span
+              >Curae hendrerit donec commodo hendrerit egestas tempus, turpis
+              facilisis nostra nunc. Vestibulum dui eget ultrices.</span
             >
           </p>
-          <select
-            class="form-select form-select-lg mb-3"
-            id="menu"
-            aria-label=".form-select-lg example"
-            onchange="search(this.value)"
-          ></select>
         </div>
       </div>
-
       <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-        <table class="table table-light table-striped" id="table"></table>
+        <div class="col" id="map"></div>
+        <div class="col">
+          <form>
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputPassword1"
+                class="form-label"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label
+                class="form-check-label"
+                for="exampleCheck1"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Subscribe to similar events</label
+              >
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
-    <script src="/backend/ViewEvents.js"></script>
     <script src="assets/bootstrap/js/bootstrap1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 var xhr = new XMLHttpRequest(); //handles external url search
 var data = new XMLHttpRequest(); //handles our data html pages
 var db;
+var key;
 var address;
 var notes;
 var title;
@@ -21,34 +22,34 @@ function search(query) {
     "<tr><th>" +
     "title" +
     "</th><th>" +
-    "event_group" +
+    "next_date" +
     "</th>" +
     "<th>" +
     "notes" +
     "</th><th>" +
-    "all_dates" +
-    "</th><th>Maps Link</th></tr>";
+    "event_group" +
+    "</th><th>Book</th></tr>";
   for (let i = 0; i < db.length; i++) {
     if (query === event_type[i]) {
-      url = "https://www.google.ca/maps/place/" + long[i] + " " + lat[i];
       output +=
         "<tr><td>" +
         title[i] +
         "</td>" +
         "<td>" +
-        event_type[i] +
+        next_date[i] +
         "</td>" +
         "<td>" +
         notes[i] +
         "</td>" +
         "<td>" +
-        all_dates[i] +
+        event_type[i] +
         "</td>" +
-        '<td><a target="_blank" href="' +
-        url +
-        '">Click Me!</a></td></tr>';
-    }else{
-      url = "https://www.google.ca/maps/place/" + long[i] + " " + lat[i];
+        "<td>" +
+        ' <button type="button" onclick="sendData(this.value)" value="' +
+        key[i] +
+        '" class="btn btn-primary">Book</button>' +
+        "</td>";
+    } else if (query === "Other" && query != event_type[i]) {
       output +=
         "<tr><td>" +
         title[i] +
@@ -60,15 +61,23 @@ function search(query) {
         notes[i] +
         "</td>" +
         "<td>" +
-        all_dates[i] +
+        "Other" +
         "</td>" +
-        '<td><a target="_blank" href="' +
-        url +
-        '">Click Me!</a></td></tr>';
+        "<td>" +
+        ' <button type="button" onclick="sendData(this.value)" value="' +
+        key[i] +
+        '" class="btn btn-primary">Book</button>' +
+        "</td>";
     }
   }
   document.getElementById("table").innerHTML = output;
 }
+function sendData(value) {
+
+  console.log(value);
+  window.location.href = "/book.html";
+}
+
 /**
  * Here we will get the tags for our search query.
  */
@@ -104,6 +113,7 @@ function retrieve() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       db = JSON.parse(xhr.responseText);
       console.log("Database Ready");
+      key = [];
       address = [];
       notes = [];
       title = [];
@@ -116,6 +126,7 @@ function retrieve() {
       long = [];
 
       for (let i = 0; i < db.length; i++) {
+        key.push(i);
         address.push(db[i].address);
         notes.push(db[i].notes);
         title.push(db[i].title);
