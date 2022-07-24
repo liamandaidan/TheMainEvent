@@ -54,7 +54,7 @@ function retrieve() {
 
       }
 
-      YourFunctionHere();
+      print();
     } else if (xhr.status == 404) {
       console.log("Could not find database");
     }
@@ -66,7 +66,7 @@ function retrieve() {
 /**
  * TODO
  */
-function YourFunctionHere() {
+function print() {
   //here you will add your populate into HTML from JS....
   //basic for loop to print all to console
   for (let i = 0; i < db.length; i++) console.log(title[i]);
