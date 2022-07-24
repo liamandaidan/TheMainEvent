@@ -37,17 +37,21 @@ function retrieve() {
       lat = [];
       long = [];
 
+      var pickDay = "July 24";
       for (let i = 0; i < db.length; i++) {
-        address.push(db[i].address);
-        notes.push(db[i].notes);
-        title.push(db[i].title);
-        event_type.push(db[i].event_type);
-        more_info_url.push(db[i].more_info_url);
-        event_group.push(db[i].event_group);
-        all_dates.push(db[i].all_dates);
-        next_date.push(db[i].next_date_times);
-        lat.push(db[i].longitude);
-        long.push(db[i].longitude);
+        if (db[i].all_dates.startsWith(pickDay)) {
+          address.push(db[i].address);
+          notes.push(db[i].notes);
+          title.push(db[i].title);
+          event_type.push(db[i].event_type);
+          more_info_url.push(db[i].more_info_url);
+          event_group.push(db[i].event_group);
+          all_dates.push(db[i].all_dates);
+          next_date.push(db[i].next_date_times);
+          lat.push(db[i].longitude);
+          long.push(db[i].longitude);
+        }
+
       }
 
       YourFunctionHere();
