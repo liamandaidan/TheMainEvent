@@ -8,5 +8,5 @@ function checkfunction() {
         txt = txt + checked[i].value + ", ";
       }
     }
-    alert("You will get notifications from " + txt);
+    alert("You will get email notifications of these events near you: " + txt);
   }
