@@ -1,0 +1,16 @@
+.b {
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.b h2 {
+    color: white;
+}
+
+.b table {
+    width: 95%;
+}
+
+.b td {
+    width: auto;
+}
