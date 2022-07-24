@@ -54,7 +54,7 @@ function search(query) {
         title[i] +
         "</td>" +
         "<td>" +
-        event_type[i] +
+        "Other" +
         "</td>" +
         "<td>" +
         notes[i] +
