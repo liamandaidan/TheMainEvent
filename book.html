@@ -1,75 +1,57 @@
 <!DOCTYPE html>
 <html class="text-dark" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>Book</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap1.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700"
-    />
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/Black-Navbar.css" />
-    <link
-      rel="stylesheet"
-      href="assets/css/Dark-NavBar-Navigation-with-Button.css"
-    />
-    <link
-      rel="stylesheet"
-      href="assets/css/Dark-NavBar-Navigation-with-Search.css"
-    />
-    <link rel="stylesheet" href="assets/css/Dark-NavBar.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/icon-star-full.css" />
-    <link rel="stylesheet" href="assets/css/Section-Title.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <style>
-      #map {
-        width: 500px;
-        height: 400px;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWfu-lO-y3oA2wKN-3-677DEmCStsUipU"></script>
-    <script>
-      function initialize() {
-        var mapCanvas = document.getElementById("map");
-        //51.0489141,-114.0680675
-        var myLatLng = { lat: 51.0489141, lng: -114.0680675 };
-        var mapOptions = {
-          center: new google.maps.LatLng(myLatLng),
-          zoom: 15,
-          mapTypeId: google.maps.MapTypeId.SATELLITE,
-          
-        };
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: "Hello World!",
-        });
-      }
-      google.maps.event.addDomListener(window, "load", initialize);
-    </script>
-  </head>
 
-  <body class="bg-dark">
-    <div class="bg-dark title-div">
-      <h1 class="fs-4 text-light bg-dark">Book</h1>
-    </div>
-    <nav
-      class="navbar navbar-light navbar-expand-md bg-warning navbar-fixed-top navigation-clean-button"
-      style="
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Book</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap1.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700" />
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/Black-Navbar.css" />
+  <link rel="stylesheet" href="assets/css/Dark-NavBar-Navigation-with-Button.css" />
+  <link rel="stylesheet" href="assets/css/Dark-NavBar-Navigation-with-Search.css" />
+  <link rel="stylesheet" href="assets/css/Dark-NavBar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" />
+  <link rel="stylesheet" href="assets/css/icon-star-full.css" />
+  <link rel="stylesheet" href="assets/css/Section-Title.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    #map {
+      width: 500px;
+      height: 400px;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWfu-lO-y3oA2wKN-3-677DEmCStsUipU"></script>
+  <script>
+    function initialize() {
+      var mapCanvas = document.getElementById("map");
+      //51.0489141,-114.0680675
+      var myLatLng = { lat: 51.0489141, lng: -114.0680675 };
+      var mapOptions = {
+        center: new google.maps.LatLng(myLatLng),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+
+      };
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: "Hello World!",
+      });
+    }
+    google.maps.event.addDomListener(window, "load", initialize);
+  </script>
+</head>
+
+<body class="bg-dark">
+  <div class="bg-dark title-div">
+    <h1 class="fs-4 text-light bg-dark">Book</h1>
+  </div>
+  <nav class="navbar navbar-light navbar-expand-md bg-warning navbar-fixed-top navigation-clean-button" style="
         background: rgb(34, 34, 34);
         border-radius: 20;
         border-top-left-radius: 20;
@@ -79,83 +61,37 @@
         border-style: none;
         padding-top: 0;
         padding-bottom: 10px;
-      "
-    >
-      <div class="container">
-        <button
-          data-bs-toggle="collapse"
-          class="navbar-toggler"
-          data-bs-target="#navcol-1"
-        >
-          <span class="visually-hidden">Toggle navigation</span
-          ><span class="navbar-toggler-icon"></span>
-        </button>
-        <div>
-          <a class="navbar-brand" href="index.html"
-            ><span
-              ><img width="100px" height="100px" src="/assets/img/logo.png"
-            /></span>
-          </a>
-        </div>
-        <div
-          class="collapse navbar-collapse"
-          id="navcol-1"
-          style="color: rgb(255, 255, 255)"
-        >
-          <ul class="navbar-nav nav-right">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                href="index.html"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="viewEvents.html"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >View Events</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="calendar.html"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Calendar</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="faq.html"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Notification</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="yourEvents.html"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Your event</a
-              >
-            </li>
-          </ul>
-          <p class="ms-auto navbar-text actions">
-            <a
-              class="login"
-              href="login.html"
-              style="color: rgba(224, 217, 217, 0.9)"
-              >Log In</a
-            >
-            <a
-              class="btn btn-light action-button"
-              role="button"
-              href="signup.html"
-              style="
+      ">
+    <div class="container">
+      <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+        <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+      </button>
+      <div>
+        <a class="navbar-brand" href="index.html"><span><img width="100px" height="100px"
+              src="/assets/img/logo.png" /></span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255, 255, 255)">
+        <ul class="navbar-nav nav-right">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" style="color: rgba(224, 217, 217, 0.9)">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="viewEvents.html" style="color: rgba(224, 217, 217, 0.9)">View Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="calendar.html" style="color: rgba(224, 217, 217, 0.9)">Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Notification.html" style="color: rgba(224, 217, 217, 0.9)">Notification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="yourEvents.html" style="color: rgba(224, 217, 217, 0.9)">Your event</a>
+          </li>
+        </ul>
+        <p class="ms-auto navbar-text actions">
+          <a class="login" href="login.html" style="color: rgba(224, 217, 217, 0.9)">Log In</a>
+          <a class="btn btn-light action-button" role="button" href="signup.html" style="
                 color: rgba(0, 0, 0, 0.9);
                 background: var(--bs-gray-200);
                 border-radius: 10px;
@@ -163,81 +99,53 @@
                 border-color: rgba(0, 0, 0, 0.9);
                 font-size: 16px;
                 padding: 5px 8px;
-              "
-              >Sign Up</a
-            >
-          </p>
-        </div>
-      </div>
-    </nav>
-    <div class="container py-4 py-xl-5">
-      <div class="row mb-5">
-        <div class="col-md-8 col-xl-6 text-center mx-auto">
-          <h2>
-            <span style="color: rgb(255, 255, 255)">Book the Main Event</span>
-          </h2>
-          <p class="w-lg-50">
-            <span style="color: rgb(255, 255, 255)"
-              >Curae hendrerit donec commodo hendrerit egestas tempus, turpis
-              facilisis nostra nunc. Vestibulum dui eget ultrices.</span
-            >
-          </p>
-        </div>
-      </div>
-      <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-        <div class="col" id="map"></div>
-        <div class="col">
-          <form>
-            <div class="mb-3">
-              <label
-                for="exampleInputEmail1"
-                class="form-label"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Email address</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-              <div id="emailHelp" class="form-text">
-                We'll never share your email with anyone else.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label
-                for="exampleInputPassword1"
-                class="form-label"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
-            </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label
-                class="form-check-label"
-                for="exampleCheck1"
-                style="color: rgba(224, 217, 217, 0.9)"
-                >Subscribe to similar events</label
-              >
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
+              ">Sign Up</a>
+        </p>
       </div>
     </div>
-    <script src="assets/bootstrap/js/bootstrap1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
-    <script src="assets/js/Lightbox-Gallery.js"></script>
-  </body>
+  </nav>
+  <div class="container py-4 py-xl-5">
+    <div class="row mb-5">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+        <h2>
+          <span style="color: rgb(255, 255, 255)">Book the Main Event</span>
+        </h2>
+        <p class="w-lg-50">
+          <span style="color: rgb(255, 255, 255)">Curae hendrerit donec commodo hendrerit egestas tempus, turpis
+            facilisis nostra nunc. Vestibulum dui eget ultrices.</span>
+        </p>
+      </div>
+    </div>
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+      <div class="col" id="map"></div>
+      <div class="col">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" style="color: rgba(224, 217, 217, 0.9)">Email
+              address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              style="color: rgba(224, 217, 217, 0.9)">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" />
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+            <label class="form-check-label" for="exampleCheck1" style="color: rgba(224, 217, 217, 0.9)">Subscribe to
+              similar events</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="assets/bootstrap/js/bootstrap1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+  <script src="assets/js/Lightbox-Gallery.js"></script>
+</body>
+
 </html>
