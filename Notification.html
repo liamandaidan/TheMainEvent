@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/sidebar-menu.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/textarea.css">
+    <script src="/js/check.js"></script>
 
     <style>
         .myForm {
@@ -126,26 +127,27 @@ align-items: center;
          <legend style="color:white">What is your Category would you like to subscribe to?</legend>
          <br>
         <label class="choice" style="color:white">  Athletic/Sport </label>
-        <input type="checkbox" name="extras" value="baby" >
+        <input type="checkbox" name="extras" value="Athletic/Sport" id="check1">
         <br>
         <label class="choice" style="color:white">  Recreation and leisure </label>
-        <input type="checkbox" name="extras" value="wheelchair">
+        <input type="checkbox" name="extras" value="Recreation and leisure" id="check2" >
         <br>
         <label class="choice" style="color:white">  Board Meeting </label>
-        <input type="checkbox" name="extras" value="tip">
+        <input type="checkbox" name="extras" value="Board Meeting" id="check3" >
         <br>
         <label class="choice" style="color:white">  Community meet </label>
-        <input type="checkbox" name="extras" value="tip">
+        <input type="checkbox" name="extras" value="Community meet" id="check4">
         <br>
        <label class="choice" style="color:white">  Informational </label>
-       <input type="checkbox" name="extras" value="tip">
+       <input type="checkbox" name="extras" value="Informational s" id="check5" >
        <br>
         <label class="choice" style="color:white">  Other </label>
-        <input type="checkbox" name="extras" value="tip">
+        <input type="checkbox" name="extras" value="Other" id="check6" >
         <br>
         </fieldset>
         <div class="containers">  
-        <button style="margin-left: auto;margin-right:auto">Save</button>   
+        <button style="margin-left: auto;margin-right:auto" onclick="checkfunction()">Save</button>   
+        <p id="message" style="display:none;color: white;">Checkbox is Checked Now!</p>
         </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
