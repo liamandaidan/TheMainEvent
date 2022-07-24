@@ -71,5 +71,12 @@ next.onclick = function (e) {
 }
 
 
-document.getElementById("dd").addEventListener("click", retrieve());
+window.addEventListener("load", eventListener, false);
+function eventListener() {
+    var pick = document.getElementById("dd");
+    pick.addEventListener("click", function () { getData("specificD.html"); }, false);
+}
 
+function getData(html) {
+    window.location.href = "specificD.html";
+}
