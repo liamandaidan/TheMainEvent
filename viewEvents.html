@@ -1,12 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html class="text-dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>View Events</title>
-</head>
-<body>
-    <h1>View Events</h1>
-</body>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap1.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700"
+    />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/Black-Navbar.css" />
+
+
+   
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css"
+    />
+   
+    <link rel="stylesheet" href="assets/css/Section-Title.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body class="bg-dark" onload="retrieve(event_group,notes,title,event_type)">
+    <div class="bg-dark title-div">
+      <h1 class="fs-4 text-light bg-dark">View Events</h1>
+    </div>
+    <nav
+      class="navbar navbar-light navbar-expand-md bg-warning navbar-fixed-top navigation-clean-button"
+      style="
+        background: rgb(34, 34, 34);
+        border-radius: 20;
+        border-top-left-radius: 20;
+        border-top-right-radius: 20;
+        border-bottom-right-radius: 20;
+        border-bottom-left-radius: 20;
+        border-style: none;
+        padding-top: 0;
+        padding-bottom: 10px;
+      "
+    >
+      <div class="container">
+        <button
+          data-bs-toggle="collapse"
+          class="navbar-toggler"
+          data-bs-target="#navcol-1"
+        >
+          <span class="visually-hidden">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+          <a class="navbar-brand" href="index.html"
+            ><span
+              ><img width="100px" height="100px" src="/assets/img/logo.png"
+            /></span>
+          </a>
+        </div>
+        <div
+          class="collapse navbar-collapse"
+          id="navcol-1"
+          style="color: rgb(255, 255, 255)"
+        >
+          <ul class="navbar-nav nav-right">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="index.html"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="viewEvents.html"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >View Events</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="about.html"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Calendar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="faq.html"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Notification</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="yourEvents.html"
+                style="color: rgba(224, 217, 217, 0.9)"
+                >Your event</a
+              >
+            </li>
+          </ul>
+          <p class="ms-auto navbar-text actions">
+            <a
+              class="login"
+              href="login.html"
+              style="color: rgba(224, 217, 217, 0.9)"
+              >Log In</a
+            >
+            <a
+              class="btn btn-light action-button"
+              role="button"
+              href="signup.html"
+              style="
+                color: rgba(0, 0, 0, 0.9);
+                background: var(--bs-gray-200);
+                border-radius: 10px;
+                border-style: solid;
+                border-color: rgba(0, 0, 0, 0.9);
+                font-size: 16px;
+                padding: 5px 8px;
+              "
+              >Sign Up</a
+            >
+          </p>
+        </div>
+      </div>
+    </nav>
+    <div class="container py-4 py-xl-5">
+      <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2>
+            <span style="color: rgb(255, 255, 255)">View Events</span>
+          </h2>
+          <p class="w-lg-50">
+            <span style="color: rgb(255, 255, 255)"
+              >Select from our menu a keyword to find events suited to
+              you!</span
+            >
+          </p>
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onchange="getTags()">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+        <p id="gTag"></p>
+ 
+      </div>
+    </div>
+    <script src="/backend/ViewEvents.js" >
+    </script>
+    <script src="assets/bootstrap/js/bootstrap1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    
+  </body>
 </html>
