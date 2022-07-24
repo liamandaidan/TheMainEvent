@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="text-dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>View Events</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700" />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/Black-Navbar.css" />
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-Navigation-with-Button.css" />
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-Navigation-with-Search.css" />
+    <link rel="stylesheet" href="assets/css/Dark-NavBar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" />
+    <link rel="stylesheet" href="assets/css/icon-star-full.css" />
+    <link rel="stylesheet" href="assets/css/Section-Title.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/calendarCss.css" />
+</head>
+
+<body class="bg-dark">
+    <div class="bg-dark title-div">
+        <h1 class="fs-4 text-light bg-dark">View Events</h1>
+    </div>
+    <nav class="navbar navbar-light navbar-expand-md bg-warning navbar-fixed-top navigation-clean-button" style="
+        background: rgb(34, 34, 34);
+        border-radius: 20;
+        border-top-left-radius: 20;
+        border-top-right-radius: 20;
+        border-bottom-right-radius: 20;
+        border-bottom-left-radius: 20;
+        border-style: none;
+        padding-top: 0;
+        padding-bottom: 10px;
+      ">
+        <div class="container">
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <a class="navbar-brand" href="index.html"><span><img width="100px" height="100px"
+                            src="/assets/img/logo.png" /></span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255, 255, 255)">
+                <ul class="navbar-nav nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" style="color: rgba(224, 217, 217, 0.9)">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viewEvents.html" style="color: rgba(224, 217, 217, 0.9)">View
+                            Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" style="color: rgba(224, 217, 217, 0.9)">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html" style="color: rgba(224, 217, 217, 0.9)">Notification</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yourEvents.html" style="color: rgba(224, 217, 217, 0.9)">Your
+                            event</a>
+                    </li>
+                </ul>
+                <p class="ms-auto navbar-text actions">
+                    <a class="login" href="login.html" style="color: rgba(224, 217, 217, 0.9)">Log In</a>
+                    <a class="btn btn-light action-button" role="button" href="signup.html" style="
+                color: rgba(0, 0, 0, 0.9);
+                background: var(--bs-gray-200);
+                border-radius: 10px;
+                border-style: solid;
+                border-color: rgba(0, 0, 0, 0.9);
+                font-size: 16px;
+                padding: 5px 8px;
+              ">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <section class="content">
+        <section class="a">
+            <p class="subtitle">Calendar</p>
+            <div class="calendar">
+                <div class="title">
+                    <h1 class="orange" id="calendar-title">Month</h1>
+                    <h2 class="orange small" id="calendar-year">Year</h2>
+                    <a href="" id="prev">&laquo;</a>
+                    <a href="" id="next">&raquo;</a>
+                    <div class="body">
+                        <div class="lightgrey body-list">
+                            <ul>
+                                <li>MON</li>
+                                <li>TUE</li>
+                                <li>WED</li>
+                                <li>THU</li>
+                                <li>FRI</li>
+                                <li>SAT</li>
+                                <li>SUN</li>
+                            </ul>
+                        </div>
+                        <div class="darkgrey body-list">
+                            <ul id="days">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="b">
+            <p class="subtitle">Category</p>
+            <div class="images">
+                <img src="assets/img/aboriginal.jpg">
+                <img src="assets/img/tech.jpg">
+                <img src="assets/img/food.jpg">
+                <img src="assets/img/market.jpg">
+                <img src="assets/img/music.jpg">
+                <img src="assets/img/outdoor.jpg">
+            </div>
+        </section>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="assets/js/calendar.js"></script>
+</body>
+
+</html>
