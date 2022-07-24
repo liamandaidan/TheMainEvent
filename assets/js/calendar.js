@@ -41,7 +41,7 @@ function refreshDate() {
         } else if (i == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
             myclass = " class='orange orangebox'";
         } else {
-            myclass = " class='darkgrey'";
+            myclass = " class='darkgrey' id='dd'";
         }
         str += "<li" + myclass + ">" + i + "</li>";
     }
@@ -68,4 +68,15 @@ next.onclick = function (e) {
         my_month = 0;
     }
     refreshDate();
+}
+
+
+window.addEventListener("load", eventListener, false);
+function eventListener() {
+    var pick = document.getElementById("dd");
+    pick.addEventListener("click", function () { getData("specificD.html"); }, false);
+}
+
+function getData(html) {
+    window.location.href = "specificD.html";
 }
