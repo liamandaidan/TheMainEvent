@@ -41,6 +41,8 @@ function search(query) {
         "</td>" +
         "<td>" +
         notes[i] +
+        " <br>More info here: " +
+        more_info_url[i] +
         "</td>" +
         "<td>" +
         event_type[i] +
@@ -60,6 +62,8 @@ function search(query) {
         "</td>" +
         "<td>" +
         notes[i] +
+        " <br>More info here: " +
+        more_info_url[i] +
         "</td>" +
         "<td>" +
         "Other" +
@@ -74,8 +78,7 @@ function search(query) {
   document.getElementById("table").innerHTML = output;
 }
 function sendData(value) {
-
-  console.log(value);
+  //console.log(value);
   window.location.href = "/book.html";
 }
 
