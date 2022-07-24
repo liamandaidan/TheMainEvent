@@ -16,6 +16,7 @@ var usedKeyWords; //this will contain the keywords used in events.
 var allTags; //sorted tags
 
 function emailBot() {}
+
 function search(query) {
   let output =
     "<table>" +
@@ -166,7 +167,7 @@ function initialize() {
   var mapOptions = {
     center: new google.maps.LatLng(myLatLng),
     zoom: 15,
-    mapTypeId: google.maps.MapTypeId.SATELLITE,
+    mapTypeId: google.maps.MapTypeId.roadmap,
   };
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({
