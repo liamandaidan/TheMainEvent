@@ -17,7 +17,7 @@ var allTags; //sorted tags
 function emailBot() {}
 function search(query) {
   let output =
-    "<h2>Search Results</h2><table>" +
+    "<table>" +
     "<tr><th>" +
     "title" +
     "</th><th>" +
